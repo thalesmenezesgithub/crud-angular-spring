@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Course } from '../models/course';
+import { delay, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,6 @@ export class CoursesService
 
   list()
   {
-    return this.httpClient.get<Course[]>(this.API);
+    return this.httpClient.get<Course[]>(this.API).pipe( delay(1000),);
   }
 }
