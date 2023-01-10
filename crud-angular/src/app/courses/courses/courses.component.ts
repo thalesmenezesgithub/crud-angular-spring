@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { Course } from '../models/course';
 import { CoursesService } from '../services/courses.service';
@@ -10,13 +11,14 @@ import { CoursesService } from '../services/courses.service';
 })
 export class CoursesComponent
 {
-  courses: Course[] = this.courseService.list();
+  courses: Observable<Course[]>;
 
   readonly displayedColumns = ['name', 'category'];
 
-  constructor(
-    private courseService: CoursesService
-  ){ }
+  constructor(private courseService: CoursesService)
+  {
+    this.courses = this.courseService.list();
+  }
 
   onAdd()
   {
