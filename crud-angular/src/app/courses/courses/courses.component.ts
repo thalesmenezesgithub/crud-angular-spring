@@ -14,9 +14,7 @@ export class CoursesComponent
 
   readonly displayedColumns = ['name', 'category'];
 
-  constructor(
-    private courseService: CoursesService
-  ){ }
+  constructor(private courseService: CoursesService){ }
 
   onAdd()
   {
