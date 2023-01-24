@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "course")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class Course
 {
     @Id
