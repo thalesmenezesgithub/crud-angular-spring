@@ -7,14 +7,35 @@
   <div *ngIf="courses$ | async as courses; else loading">
     <table mat-table [dataSource]="courses" class="mat-elevation-z8">
 
+      <!--Course-->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Curso </th>
         <td mat-cell *matCellDef="let course"> {{ course.name }} </td>
       </ng-container>
 
+      <!--Category-->
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef> Categoria </th>
         <td mat-cell *matCellDef="let course"> {{ course.category }} </td>
+      </ng-container>
+
+      <!--Actions-->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="action-column">
+          <button mat-mini-fab color="accent" aria-label="Adicionar um curso" (click)="onAdd()" class="action-column-header">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let course">
+          <button mat-icon-button color="primary" aria-label="Editar um curso" (click)="onEdit()" class="action-column-header">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="warn" aria-label="Remover um curso" (click)="onDelete()" class="action-column-header">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

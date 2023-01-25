@@ -4,6 +4,7 @@ import { Course } from '../models/course';
 import { CoursesService } from '../services/courses.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -17,11 +18,14 @@ export class CoursesComponent
   //Adiciona o $ para dizer que e observable angular
   courses$: Observable<Course[]>;
 
-  readonly displayedColumns = ['name', 'category'];
+  readonly displayedColumns = ['name', 'category','actions'];
 
   constructor(
     private courseService: CoursesService,
-    public dialog: MatDialog)
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
+  )
   {
     this.courses$ = this.courseService.list().pipe( catchError(error => {
       this.onError('Erro ao carregar cursos.');
@@ -38,16 +42,19 @@ export class CoursesComponent
 
   onAdd()
   {
-    //this.add.emit(true);
+    console.log("onAdd");
+    this.router.navigate(['new'],{ relativeTo: this.route });
   }
 
-  onEdit(course: Course)
+  onEdit()
   {
+    console.log("onEdit");
     //this.edit.emit(course);
   }
 
-  onDelete(course: Course)
+  onDelete()
   {
+    console.log("onDelete");
     //this.remove.emit(course);
   }
 }

@@ -14,12 +14,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { CourseFromComponent } from './course-from/course-from.component';
 
 
 @NgModule({
   declarations: [
-    CoursesComponent
+    CoursesComponent,
+    CourseFromComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
     SharedModule,
   ]
 })

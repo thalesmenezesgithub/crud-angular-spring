@@ -1,5 +1,6 @@
 package com.thales.crudspring.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import javax.persistence.*;
 
