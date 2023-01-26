@@ -42,19 +42,16 @@ export class CoursesComponent
 
   onAdd()
   {
-    console.log("onAdd");
     this.router.navigate(['new'],{ relativeTo: this.route });
   }
 
   onEdit()
   {
-    console.log("onEdit");
     //this.edit.emit(course);
   }
 
   onDelete()
   {
-    console.log("onDelete");
     //this.remove.emit(course);
   }
 }
