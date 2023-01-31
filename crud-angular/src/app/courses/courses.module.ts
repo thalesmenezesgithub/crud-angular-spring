@@ -22,11 +22,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CoursesListComponent } from './courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
     CoursesComponent,
-    CourseFromComponent
+    CourseFromComponent,
+    CoursesListComponent
   ],
   imports: [
     CommonModule,

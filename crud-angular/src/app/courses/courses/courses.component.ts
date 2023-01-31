@@ -18,7 +18,6 @@ export class CoursesComponent
   //Adiciona o $ para dizer que e observable angular
   courses$: Observable<Course[]>;
 
-  readonly displayedColumns = ['name', 'category','actions'];
 
   constructor(
     private courseService: CoursesService,
