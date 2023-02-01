@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 //Componentes
 import { CoursesRoutingModule } from './courses-routing.module';
-import { CoursesComponent } from './courses/courses.component';
-import { CourseFromComponent } from './course-from/course-from.component';
+import { CoursesComponent } from './containers/courses/courses.component';
+import { CourseFromComponent } from './containers/course-from/course-from.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 //Shared pasta compartilhada de componentes
@@ -22,7 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
